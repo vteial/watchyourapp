@@ -41,6 +41,11 @@ app.config(function($routeProvider, $locationProvider) {
 		controller : 'indexController'
 	});
 
+	$routeProvider.when('/test', {
+		templateUrl : 'modules/test/test.html',
+		controller : 'testController'
+	});
+
 	$routeProvider.otherwise({
 		redirectTo : '/notFound'
 	});
@@ -78,7 +83,7 @@ function appInit($log, $rootScope, $location, $sessionStorage) {
 
 	$rootScope.homeView = '/index';
 
-	$location.path('/index');
+	$location.path('/test');
 
 	$log.info('Initialization finished...');
 }
